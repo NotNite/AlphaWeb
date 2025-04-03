@@ -1,0 +1,27 @@
+{
+  "extends": "@tsconfig/svelte/tsconfig.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "resolveJsonModule": true,
+    "composite": true,
+    /**
+     * Typecheck JS in `.svelte` and `.js` files by default.
+     * Disable checkJs if you'd like to use dynamic types in JS.
+     * Note that setting allowJs false does not prevent the use
+     * of JS in `.svelte` files.
+     */
+    "allowJs": true,
+    "checkJs": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+
+    // Hack to get proper types
+    // https://github.com/dotnet/runtime/blob/cabacfcdabf1f3fde00edd096dc7412c5e0ec2cf/src/mono/browser/runtime/dotnet.d.ts
+    "paths": {
+      "#wasm/dotnet.js": ["./src/lib/interop/dotnet.d.ts"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte"]
+}

@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.WebAssembly">
+    <PropertyGroup>
+        <TargetFramework>net9.0-browser</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+        <WasmBuildNative>true</WasmBuildNative>
+        <WasmNativeStrip>false</WasmNativeStrip>
+        <WasmEnableThreads>true</WasmEnableThreads>
+        <!-- Required since BuildNative+EnableThreads doesn't work together unless you specify things manually -->
+        <!-- This is so bad lol TODO clean this up -->
+        <EmccExtraCFlags>-s USE_PTHREADS=1</EmccExtraCFlags>
+        <EmccExtraLDFlags>-sWASMFS -lopfs.js -s USE_PTHREADS=1 -Wno-pthreads-mem-growth -s PTHREAD_POOL_SIZE=0 -s PTHREAD_POOL_SIZE_STRICT=0 -sEXPORTED_RUNTIME_METHODS=["cwrap","wasmExports","runtimeKeepalivePush","runtimeKeepalivePop","UTF8ArrayToString","wasmTable","wasmFS$backends","FS","setValue","OPFS","wasmfsOPFSDirectoryHandles","wasmfsOPFSGetOrCreateFile","wasmfsOPFSProxyFinish","MEMFS","safeSetTimeout","lengthBytesUTF8","stringToUTF8Array"]</EmccExtraLDFlags>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <NativeFileReference Include="fs.c"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Lumina" Version="5.6.1"/>
+        <PackageReference Include="Lumina.Excel" Version="7.2.1"/>
+    </ItemGroup>
+</Project>
+    
