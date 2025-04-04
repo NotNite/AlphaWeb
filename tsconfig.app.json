@@ -15,13 +15,7 @@
     "allowJs": true,
     "checkJs": true,
     "isolatedModules": true,
-    "moduleDetection": "force",
-
-    // Hack to get proper types
-    // https://github.com/dotnet/runtime/blob/cabacfcdabf1f3fde00edd096dc7412c5e0ec2cf/src/mono/browser/runtime/dotnet.d.ts
-    "paths": {
-      "#wasm/dotnet.js": ["./src/lib/interop/dotnet.d.ts"]
-    }
+    "moduleDetection": "force"
   },
   "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte"]
 }

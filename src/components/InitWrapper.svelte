@@ -1,13 +1,16 @@
 <script lang="ts">
-  import { initWasm } from "../lib/interop/wasm.svelte";
+  import { initWasm } from "../lib/wasm.svelte";
   import Main from "./Main.svelte";
 
   async function initFS() {
+    if (!("showDirectoryPicker" in window)) {
+      throw new Error("File System Access API not implemented. Use a recent version of Chrome.");
+    }
+
     const handle = await window.showDirectoryPicker({
       id: "ffxiv"
     });
-    if (handle.name !== "game")
-      throw new Error(`Expected directory name game, got ${handle.name}`);
+    if (handle.name !== "game") throw new Error(`Expected directory name "game", got "${handle.name}"`);
     return handle;
   }
 
@@ -17,9 +20,9 @@
   async function initWrapper() {
     try {
       const handle = await initFS();
-      message = "Loading WASM, please wait...";
+      message = "Starting .NET runtime, please wait...";
       const bindings = await initWasm(handle);
-      message = "Starting Lumina, please wait...";
+      message = "Initializing Lumina, please wait (this takes a while)...";
       const success = await bindings.CreateLumina();
       if (!success) throw new Error("Failed to create Lumina");
     } catch (e) {

@@ -1,3 +1,11 @@
+# Project-specific
+/public/wasm
+bin/
+obj/
+.idea/
+.vs/
+*.user
+
 # Logs
 logs
 *.log

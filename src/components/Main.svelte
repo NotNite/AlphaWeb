@@ -1,16 +1,11 @@
 <script lang="ts">
-  import wasm from "../lib/interop/wasm.svelte";
+  import wasm from "../lib/wasm.svelte";
 
-  const sheets = $state(
-    wasm
-      .bindings!.GetExcelSheets()
-      .then((msg) => JSON.parse(msg) as string[])
-      .then((sheets) => sheets.sort())
-  );
+  const sheets = $state(wasm.callAndParseJson("GetExcelSheets").then((sheets) => sheets.sort()));
 </script>
 
 {#await sheets}
-  <span>Asked for sheets...</span>
+  <span>Waiting for response from WASM...</span>
 {:then sheets}
   <ul>
     {#each sheets as sheet}

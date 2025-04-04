@@ -1,0 +1,11 @@
+<Project>
+    <!-- https://github.com/rainersigwald/build-task-in-solution-demo/blob/65be0d8a7e2fd8560bed7a0939ecf40e8ab84aa5/Task/DemoFunctionality.targets -->
+    <UsingTask TaskName="FixupAlphaWeb"
+               AssemblyFile="$([MSBuild]::NormalizePath('$(MSBuildThisFileDirectory)', 'bin', '$(Configuration)', 'netstandard2.0', 'AlphaWeb.Build.dll'))"
+               TaskFactory="TaskHostFactory"/>
+
+    <ItemGroup>
+        <ProjectReference Include="$(MSBuildThisFileDirectory)/AlphaWeb.Build.csproj"
+                          ReferenceOutputAssembly="false"/>
+    </ItemGroup>
+</Project>
