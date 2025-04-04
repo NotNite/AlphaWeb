@@ -10,7 +10,6 @@ public class FixupAlphaWeb : Task {
     [Required] public string WorkerJankPath { get; set; } = null!;
 
     public override bool Execute() {
-        this.Log.LogMessage(MessageImportance.High, this.FrameworkDirectory);
         if (!Directory.Exists(this.FrameworkDirectory)) throw new Exception("Framework directory does not exist");
         if (!File.Exists(this.WorkerJankPath)) throw new Exception("Worker jank path does not exist");
 
