@@ -32,10 +32,11 @@ Emscripten (which is what the .NET WebAssembly toolchain uses) has [experimental
 - "genuinely what the fuck is wrong with you" - [nightshade](https://github.com/snightshade)
 - "i would repost it but i don't want to encourage this behavior" - [perchbird](https://bsky.app/profile/did:plc:h63xvhua443ofkl7qbbgqhmh)
 - "but why" - [KazWolfe](https://github.com/KazWolfe)
-- "vite user" - [adryd](https://adryd.com/)
+- "vite user" - [adryd](https://adryd.com)
 - "nice, though I think exdviewer is faster :p" - [Asriel](https://github.com/WorkingRobot)
 - "Where was this 2 years ago ffs" - [MidoriKami](https://github.com/MidoriKami)
 - "oh that's fairly tame" - [redstonekasi](https://github.com/redstonekasi)
+- "this is a very NotNite project" - [Jay](https://hl2.sh)
 - "typescript, c, and c# all in the same repo being used to do incredibly cursed things... well done LOL" - [alltheamps](https://bsky.app/profile/did:plc:w54kz3wro63hhgn3hlsgciji)
 - "You’re basically doing the 2025 version of `<script src=“ieshim.js” />` that we had to do back when I started webdev and Microsoft didn’t include half of the ECMAScript standard in their browser because they still wanted to push ActiveX." - [Kastor](https://bsky.app/profile/did:plc:v64k7asq54jpxr3uyoircckd)
 
