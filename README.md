@@ -31,6 +31,7 @@ Emscripten (which is what the .NET WebAssembly toolchain uses) has [experimental
 - "i would repost it but i don't want to encourage this behavior" - [perchbird](https://bsky.app/profile/did:plc:h63xvhua443ofkl7qbbgqhmh)
 - "So, uh, what's wrong with you?" - [Aren](https://github.com/arenmn)
 - "What the fuck is wrong with you" - [Emma](https://bsky.app/profile/did:plc:dqibjxtqfn6hydazpetzr2w4)
+- "genuinely what the fuck is wrong with you" - [nightshade](https://github.com/snightshade)
 - "but why" - [KazWolfe](https://github.com/KazWolfe)
 - "nice, though I think exdviewer is faster :p" - [Asriel](https://github.com/WorkingRobot)
 - "Where was this 2 years ago ffs" - [MidoriKami](https://github.com/MidoriKami)
